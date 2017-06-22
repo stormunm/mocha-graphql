@@ -17,18 +17,23 @@ describe("read url map", function() {
   });
 });
 
-/*
-describe("get topic data id", function() {
-  it("should read dwave topic id", function() {
-    const dwave = getTopic('dwave');
-    // console.log(dwave);
-    const id = dwave.id
-    const relatedTopics = dwave.relatedTopics
-    expect(id).to.equal("MDU6VG9waWNkd2F2ZQ==");
-    expect(relatedTopics.length).to.equal(0);
+
+describe("check function getUniformResourceLocatable", function() {
+  it("should read function with plum", function() {
+    const plum = getUniformResourceLocatable('plum');
+    //console.log(plum);
+    expect(plum.resourcePath).to.equal("/stormasm/plum");
+    expect(plum.url).to.equal("https://github.com/stormasm/plum");
+  });
+  it("should read function with dgraph", function() {
+    const dgraph = getUniformResourceLocatable('dgraph');
+    //console.log(dgraph);
+    expect(dgraph.resourcePath).to.equal("/dgraph-io/dgraph");
+    expect(dgraph.url).to.equal("https://github.com/dgraph-io/dgraph");
   });
 });
 
+/*
 describe("get related topic data", function() {
   it("should read libp2p related topics", function() {
     const libp2p = getTopic('libp2p');
