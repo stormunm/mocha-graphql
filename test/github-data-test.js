@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, it } from "mocha";
-import TopicMap from "./../src/schema/githubdata/topic";
+import { TopicMap } from "./../src/schema/githubdata/topic";
 
 describe("read topic map", function() {
   it("should read dwave id", function() {

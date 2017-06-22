@@ -1,5 +1,5 @@
 
-const TopicMap = {
+export const TopicMap = {
   "dgraph": {
     "id": "MDU6VG9waWNkZ3JhcGg=",
     "name": "dgraph",
@@ -59,5 +59,3 @@ const TopicMap = {
       ]
   }
 };
-
-export default TopicMap;
