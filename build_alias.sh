@@ -10,4 +10,6 @@ alias swmd5='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require
 
 alias swmd51='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/md5-test1.js'
 
-alias gh1='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-topic-test.js'
+alias gh1='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-url-test.js'
+
+alias gh2='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-topic-test.js'
