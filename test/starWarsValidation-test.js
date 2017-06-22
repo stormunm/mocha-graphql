@@ -10,7 +10,7 @@
 
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { StarWarsSchema } from './starWarsSchema.js';
+import { StarWarsSchema } from './../src/schema/starWarsSchema.js';
 import { Source } from 'graphql';
 import { parse } from 'graphql';
 import { validate } from 'graphql';
