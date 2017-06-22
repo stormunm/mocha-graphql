@@ -5,7 +5,7 @@ const TopicMap = {
     "name": "dgraph",
     "relatedTopics": []
   },
-  
+
   "noms": {
    "id": "MDU6VG9waWNub21z",
    "name": "noms",
