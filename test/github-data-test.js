@@ -25,8 +25,16 @@ describe("get topic data id", function() {
 describe("get related topic data", function() {
   it("should read libp2p related topics", function() {
     const libp2p = getTopic('libp2p');
-    // console.log(dwave);
     const relatedTopics = libp2p.relatedTopics
+    // console.log(relatedTopics);
     expect(relatedTopics.length).to.equal(2);
+    const ipfs = relatedTopics[0];
+    // console.log(ipfs);
+    const id = ipfs.id;
+    expect(id).to.equal("MDU6VG9waWNpcGZz");
+    const json = JSON.stringify(relatedTopics);
+    //console.log(json);
+    const libp2pJson = "[{\"name\":\"ipfs\",\"id\":\"MDU6VG9waWNpcGZz\"},{\"name\":\"peer\",\"id\":\"MDU6VG9waWNwZWVy\"}]";
+    expect(json).to.equal(libp2pJson);
   });
 });
