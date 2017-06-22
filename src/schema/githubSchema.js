@@ -195,36 +195,15 @@ const droidType = new GraphQLObjectType({
 const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
-    hero: {
-      type: characterInterface,
+    topic: {
+      type: topicType,
       args: {
-        episode: {
-          description: 'If omitted, returns the hero of the whole saga. If ' +
-                       'provided, returns the hero of that particular episode.',
-          type: episodeEnum
-        }
-      },
-      resolve: (root, { episode }) => getHero(episode),
-    },
-    human: {
-      type: humanType,
-      args: {
-        id: {
-          description: 'id of the human',
+        name: {
+          description: 'name of the topic',
           type: new GraphQLNonNull(GraphQLString)
         }
       },
-      resolve: (root, { id }) => getHuman(id),
-    },
-    droid: {
-      type: droidType,
-      args: {
-        id: {
-          description: 'id of the droid',
-          type: new GraphQLNonNull(GraphQLString)
-        }
-      },
-      resolve: (root, { id }) => getDroid(id),
+      resolve: (root, { name }) => getTopic(name),
     },
   })
 });
@@ -234,7 +213,7 @@ const queryType = new GraphQLObjectType({
  * type we defined above) and export it.
  */
 
-export const mySchema = new GraphQLSchema({
+export const GithubSchema = new GraphQLSchema({
   query: queryType,
-  types: [ humanType, droidType ]
+  types: [ topicType ]
 });
