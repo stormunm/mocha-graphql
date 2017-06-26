@@ -15,7 +15,7 @@ describe("read repository map", function() {
 
 describe("get repository data from function", function() {
   it("should read dgraph-io avatar url", function() {
-    const noms = getRepository("stormasm","noms");
+    const noms = getRepository("stormasm", "noms");
     const id = noms.id;
     expect(id).to.equal("MDEwOlJlcG9zaXRvcnk5MTIxNjgxNA==");
   });

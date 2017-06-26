@@ -51,6 +51,6 @@ export type Repository = {
  * Allows us to query for the repository with the owner and name.
  */
 export function getRepository(owner: string, name: string): Repository {
-    let owner_slash_name = owner + "/" + name;
+  let owner_slash_name = owner + "/" + name;
   return RepositoryMap[owner_slash_name];
 }
