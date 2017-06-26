@@ -7,7 +7,11 @@ describe("read repository owner map", function() {
   it("should read stormasm login", function() {
     const stormasm = RepositoryOwnerMap.stormasm;
     const login = stormasm.login
+    const id = stormasm.id
+    const resourcePath = stormasm.resourcePath
     expect(login).to.equal("stormasm");
+    expect(id).to.equal("MDQ6VXNlcjE4MDk5OTE=");
+    expect(resourcePath).to.equal("/stormasm");
   });
 });
 
