@@ -19,7 +19,7 @@ describe("read repository owner map", function() {
 describe("get repositoryowner data from function", function() {
   it("should read dgraph-io avatar url", function() {
     const dgraph = getRepositoryOwner('dgraph-io');
-    // console.log(dwave);
+    //console.log(dgraph);
     const id = dgraph.id
     const avatarUrl = dgraph.avatarUrl
     expect(id).to.equal("MDEyOk9yZ2FuaXphdGlvbjEzOTU4NzA2");
