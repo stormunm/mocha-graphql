@@ -5,7 +5,9 @@
 * repositoryOwner(login: "stormasm") {
 *    id
 *    login
+*    avatarUrl
 *    resourcePath
+*    url
 *    repository(name: "plum") {
 *      id
 *      nameWithOwner
