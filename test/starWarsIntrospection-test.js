@@ -8,17 +8,17 @@
  *  of patent rights can be found in the PATENTS file in the same directory.
  */
 
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
-import { StarWarsSchema } from './../src/schema/starWarsSchema.js';
-import { graphql } from 'graphql';
+import { expect } from "chai";
+import { describe, it } from "mocha";
+import { StarWarsSchema } from "./../src/schema/starWarsSchema.js";
+import { graphql } from "graphql";
 
 // 80+ char lines are useful in describe/it, so ignore in this file.
 /* eslint-disable max-len */
 
-describe('Star Wars Introspection Tests', () => {
-  describe('Basic Introspection', () => {
-    it('Allows querying the schema for types', async () => {
+describe("Star Wars Introspection Tests", () => {
+  describe("Basic Introspection", () => {
+    it("Allows querying the schema for types", async () => {
       const query = `
         query IntrospectionTypeQuery {
           __schema {
@@ -32,49 +32,49 @@ describe('Star Wars Introspection Tests', () => {
         __schema: {
           types: [
             {
-              name: 'Query'
+              name: "Query"
             },
             {
-              name: 'Episode'
+              name: "Episode"
             },
             {
-              name: 'Character'
+              name: "Character"
             },
             {
-              name: 'String'
+              name: "String"
             },
             {
-              name: 'Human'
+              name: "Human"
             },
             {
-              name: 'Droid'
+              name: "Droid"
             },
             {
-              name: '__Schema'
+              name: "__Schema"
             },
             {
-              name: '__Type'
+              name: "__Type"
             },
             {
-              name: '__TypeKind'
+              name: "__TypeKind"
             },
             {
-              name: 'Boolean'
+              name: "Boolean"
             },
             {
-              name: '__Field'
+              name: "__Field"
             },
             {
-              name: '__InputValue'
+              name: "__InputValue"
             },
             {
-              name: '__EnumValue'
+              name: "__EnumValue"
             },
             {
-              name: '__Directive'
+              name: "__Directive"
             },
             {
-              name: '__DirectiveLocation'
+              name: "__DirectiveLocation"
             }
           ]
         }
@@ -83,7 +83,7 @@ describe('Star Wars Introspection Tests', () => {
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for query type', async () => {
+    it("Allows querying the schema for query type", async () => {
       const query = `
         query IntrospectionQueryTypeQuery {
           __schema {
@@ -96,15 +96,15 @@ describe('Star Wars Introspection Tests', () => {
       const expected = {
         __schema: {
           queryType: {
-            name: 'Query'
-          },
+            name: "Query"
+          }
         }
       };
       const result = await graphql(StarWarsSchema, query);
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for a specific type', async () => {
+    it("Allows querying the schema for a specific type", async () => {
       const query = `
         query IntrospectionDroidTypeQuery {
           __type(name: "Droid") {
@@ -114,14 +114,14 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Droid'
+          name: "Droid"
         }
       };
       const result = await graphql(StarWarsSchema, query);
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for an object kind', async () => {
+    it("Allows querying the schema for an object kind", async () => {
       const query = `
         query IntrospectionDroidKindQuery {
           __type(name: "Droid") {
@@ -132,15 +132,15 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Droid',
-          kind: 'OBJECT'
+          name: "Droid",
+          kind: "OBJECT"
         }
       };
       const result = await graphql(StarWarsSchema, query);
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for an interface kind', async () => {
+    it("Allows querying the schema for an interface kind", async () => {
       const query = `
         query IntrospectionCharacterKindQuery {
           __type(name: "Character") {
@@ -151,15 +151,15 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Character',
-          kind: 'INTERFACE'
+          name: "Character",
+          kind: "INTERFACE"
         }
       };
       const result = await graphql(StarWarsSchema, query);
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for object fields', async () => {
+    it("Allows querying the schema for object fields", async () => {
       const query = `
         query IntrospectionDroidFieldsQuery {
           __type(name: "Droid") {
@@ -176,48 +176,48 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Droid',
+          name: "Droid",
           fields: [
             {
-              name: 'id',
+              name: "id",
               type: {
                 name: null,
-                kind: 'NON_NULL'
+                kind: "NON_NULL"
               }
             },
             {
-              name: 'name',
+              name: "name",
               type: {
-                name: 'String',
-                kind: 'SCALAR'
+                name: "String",
+                kind: "SCALAR"
               }
             },
             {
-              name: 'friends',
-              type: {
-                name: null,
-                kind: 'LIST'
-              }
-            },
-            {
-              name: 'appearsIn',
+              name: "friends",
               type: {
                 name: null,
-                kind: 'LIST'
+                kind: "LIST"
               }
             },
             {
-              name: 'secretBackstory',
+              name: "appearsIn",
               type: {
-                name: 'String',
-                kind: 'SCALAR'
+                name: null,
+                kind: "LIST"
               }
             },
             {
-              name: 'primaryFunction',
+              name: "secretBackstory",
               type: {
-                name: 'String',
-                kind: 'SCALAR'
+                name: "String",
+                kind: "SCALAR"
+              }
+            },
+            {
+              name: "primaryFunction",
+              type: {
+                name: "String",
+                kind: "SCALAR"
               }
             }
           ]
@@ -228,7 +228,7 @@ describe('Star Wars Introspection Tests', () => {
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for nested object fields', async () => {
+    it("Allows querying the schema for nested object fields", async () => {
       const query = `
         query IntrospectionDroidNestedFieldsQuery {
           __type(name: "Droid") {
@@ -249,62 +249,62 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Droid',
+          name: "Droid",
           fields: [
             {
-              name: 'id',
+              name: "id",
               type: {
                 name: null,
-                kind: 'NON_NULL',
+                kind: "NON_NULL",
                 ofType: {
-                  name: 'String',
-                  kind: 'SCALAR'
+                  name: "String",
+                  kind: "SCALAR"
                 }
               }
             },
             {
-              name: 'name',
+              name: "name",
               type: {
-                name: 'String',
-                kind: 'SCALAR',
+                name: "String",
+                kind: "SCALAR",
                 ofType: null
               }
             },
             {
-              name: 'friends',
+              name: "friends",
               type: {
                 name: null,
-                kind: 'LIST',
+                kind: "LIST",
                 ofType: {
-                  name: 'Character',
-                  kind: 'INTERFACE'
+                  name: "Character",
+                  kind: "INTERFACE"
                 }
               }
             },
             {
-              name: 'appearsIn',
+              name: "appearsIn",
               type: {
                 name: null,
-                kind: 'LIST',
+                kind: "LIST",
                 ofType: {
-                  name: 'Episode',
-                  kind: 'ENUM'
+                  name: "Episode",
+                  kind: "ENUM"
                 }
               }
             },
             {
-              name: 'secretBackstory',
+              name: "secretBackstory",
               type: {
-                name: 'String',
-                kind: 'SCALAR',
+                name: "String",
+                kind: "SCALAR",
                 ofType: null
               }
             },
             {
-              name: 'primaryFunction',
+              name: "primaryFunction",
               type: {
-                name: 'String',
-                kind: 'SCALAR',
+                name: "String",
+                kind: "SCALAR",
                 ofType: null
               }
             }
@@ -315,7 +315,7 @@ describe('Star Wars Introspection Tests', () => {
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for field args', async () => {
+    it("Allows querying the schema for field args", async () => {
       const query = `
         query IntrospectionQueryTypeQuery {
           __schema {
@@ -345,34 +345,35 @@ describe('Star Wars Introspection Tests', () => {
           queryType: {
             fields: [
               {
-                name: 'hero',
+                name: "hero",
                 args: [
                   {
                     defaultValue: null,
-                    description: 'If omitted, returns the hero of the whole ' +
-                                 'saga. If provided, returns the hero of ' +
-                                 'that particular episode.',
-                    name: 'episode',
+                    description:
+                      "If omitted, returns the hero of the whole " +
+                        "saga. If provided, returns the hero of " +
+                        "that particular episode.",
+                    name: "episode",
                     type: {
-                      kind: 'ENUM',
-                      name: 'Episode',
+                      kind: "ENUM",
+                      name: "Episode",
                       ofType: null
                     }
                   }
                 ]
               },
               {
-                name: 'human',
+                name: "human",
                 args: [
                   {
-                    name: 'id',
-                    description: 'id of the human',
+                    name: "id",
+                    description: "id of the human",
                     type: {
-                      kind: 'NON_NULL',
+                      kind: "NON_NULL",
                       name: null,
                       ofType: {
-                        kind: 'SCALAR',
-                        name: 'String'
+                        kind: "SCALAR",
+                        name: "String"
                       }
                     },
                     defaultValue: null
@@ -380,17 +381,17 @@ describe('Star Wars Introspection Tests', () => {
                 ]
               },
               {
-                name: 'droid',
+                name: "droid",
                 args: [
                   {
-                    name: 'id',
-                    description: 'id of the droid',
+                    name: "id",
+                    description: "id of the droid",
                     type: {
-                      kind: 'NON_NULL',
+                      kind: "NON_NULL",
                       name: null,
                       ofType: {
-                        kind: 'SCALAR',
-                        name: 'String'
+                        kind: "SCALAR",
+                        name: "String"
                       }
                     },
                     defaultValue: null
@@ -402,12 +403,11 @@ describe('Star Wars Introspection Tests', () => {
         }
       };
 
-
       const result = await graphql(StarWarsSchema, query);
       expect(result).to.deep.equal({ data: expected });
     });
 
-    it('Allows querying the schema for documentation', async () => {
+    it("Allows querying the schema for documentation", async () => {
       const query = `
         query IntrospectionDroidDescriptionQuery {
           __type(name: "Droid") {
@@ -418,8 +418,8 @@ describe('Star Wars Introspection Tests', () => {
       `;
       const expected = {
         __type: {
-          name: 'Droid',
-          description: 'A mechanical creature in the Star Wars universe.'
+          name: "Droid",
+          description: "A mechanical creature in the Star Wars universe."
         }
       };
       const result = await graphql(StarWarsSchema, query);

@@ -20,17 +20,17 @@
 */
 
 const UserMap = {
-  "stormasm": {
+  stormasm: {
     id: "MDQ6VXNlcjE4MDk5OTE=",
     name: "Michael Angerman"
   },
-  "antirez": {
+  antirez: {
     id: "MDQ6VXNlcjY1NjMy",
-    name: "Salvatore Sanfilippo",
+    name: "Salvatore Sanfilippo"
   },
-  "torvalds": {
+  torvalds: {
     id: "MDQ6VXNlcjEwMjQwMjU=",
-    name: "Linus Torvalds",
+    name: "Linus Torvalds"
   }
 };
 

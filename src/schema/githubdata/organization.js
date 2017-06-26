@@ -24,13 +24,13 @@ const OrganizationMap = {
     id: "MDEyOk9yZ2FuaXphdGlvbjEzOTU4NzA2",
     name: "Dgraph"
   },
-  "graphql": {
+  graphql: {
     id: "MDEyOk9yZ2FuaXphdGlvbjEyOTcyMDA2",
-    name: "Facebook GraphQL",
+    name: "Facebook GraphQL"
   },
-  "facebook": {
+  facebook: {
     id: "MDEyOk9yZ2FuaXphdGlvbjY5NjMx",
-    name: "Facebook",
+    name: "Facebook"
   }
 };
 
