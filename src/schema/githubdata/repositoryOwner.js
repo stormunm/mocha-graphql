@@ -1,5 +1,7 @@
+/* @flow */
+
 /**
-* given a login string return the repositoryOwner
+* given a login string return the RepositoryOwner
 *
 *{
 * repositoryOwner(login: "stormasm") {
@@ -19,7 +21,7 @@
 *}
 */
 
-const RepositoryOwnerMap = {
+export const RepositoryOwnerMap = {
   "stormasm": {
       "id": "MDQ6VXNlcjE4MDk5OTE=",
       "login": "stormasm",
@@ -43,4 +45,18 @@ const RepositoryOwnerMap = {
   }
 };
 
-export default RepositoryOwnerMap;
+export type RepositoryOwner = {
+  type: 'RepositoryOwner',
+  id: string,
+  login: string,
+  avatarUrl: string,
+  resourcePath: string,
+  url: string,
+};
+
+/**
+ * Allows us to query for the repository owner with the given login.
+ */
+export function getRepositoryOwner(login: string): RepositoryOwner {
+  return RepositoryOwnerMap[login];
+}
