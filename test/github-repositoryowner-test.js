@@ -15,18 +15,19 @@ describe("read repository owner map", function() {
   });
 });
 
-/*
-describe("get topic data id", function() {
-  it("should read dwave topic id", function() {
-    const dwave = getTopic('dwave');
+
+describe("get repositoryowner data from function", function() {
+  it("should read dgraph-io avatar url", function() {
+    const dgraph = getRepositoryOwner('dgraph-io');
     // console.log(dwave);
-    const id = dwave.id
-    const relatedTopics = dwave.relatedTopics
-    expect(id).to.equal("MDU6VG9waWNkd2F2ZQ==");
-    expect(relatedTopics.length).to.equal(0);
+    const id = dgraph.id
+    const avatarUrl = dgraph.avatarUrl
+    expect(id).to.equal("MDEyOk9yZ2FuaXphdGlvbjEzOTU4NzA2");
+    expect(avatarUrl).to.equal("https://avatars3.githubusercontent.com/u/13958706?v=3");
   });
 });
 
+/*
 describe("get related topic data", function() {
   it("should read libp2p related topics", function() {
     const libp2p = getTopic('libp2p');
