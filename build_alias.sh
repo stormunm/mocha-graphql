@@ -15,3 +15,5 @@ alias gh1='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require .
 alias gh2='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-topic-test.js'
 
 alias ro1='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-repositoryowner-test.js'
+
+alias r1='./node_modules/.bin/babel-node ./node_modules/.bin/_mocha --require ./resources/mocha-bootload --check-leaks --full-trace ./test/github-repository-test.js'
